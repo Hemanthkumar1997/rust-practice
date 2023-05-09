@@ -14,3 +14,25 @@ pub(crate) fn variables() {
     println!("{}", Z);
 
 }
+
+// shadowing with different types not allowed for mutable variables
+pub(crate) fn shadowing() {
+
+    //allowed
+    let x = 5;
+
+    let x = x+5;
+    let x = x*2;
+    println!("{}", x);
+
+    let y = "  ";
+    let y = y.len();
+
+    println!("{}", y)
+
+    //not allowed
+
+    // let mut y = "  ";
+    // y = y.len();
+
+}
