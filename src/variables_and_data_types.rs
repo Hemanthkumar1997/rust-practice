@@ -8,4 +8,9 @@ pub(crate) fn variables() {
     y = 20;
     println!("{}, {}", x, y);
 
+    // constants should have upper case names
+    const Z: &str = "constant";
+
+    println!("{}", Z);
+
 }
