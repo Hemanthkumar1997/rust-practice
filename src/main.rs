@@ -11,7 +11,10 @@ fn main() {
         let mut num: String = String::new();
 
         io::stdin().read_line(&mut num).expect("failed to read line");
-        let guessed_num: i32 = num.trim_end().parse().expect("failed to parse");
+        let guessed_num: i32 = match num.trim_end().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
 
         println!("secret num = {}", secret_num);
         match guessed_num.cmp(&secret_num) {
